@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif !important;
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.heading {
+    text-align: center;
+    margin: 20px;
+}
+
+.mode-button {
+    position: absolute;
+    top: 1.8rem;
+    right: 20px;
+}
+
+.boards {
+    display: flex;
+    justify-content: space-around;
+}
+
+.progress {
+    all: unset;
+}
+
+.board  {
+    border: 2px solid white !important;
+    padding: 1rem;
+    height: 80vh;
+    width: 20vw;
+}
+
+.progress {
+    height: 76vh;
+    width: 19vw;
+}
