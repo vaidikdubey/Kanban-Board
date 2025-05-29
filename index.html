@@ -9,21 +9,22 @@
 <body>
 
     <div class="container">
-        <div class="board">
+        <div id="todo-board" class="board">
             <h4>Todo</h4>
-            <div class="items">
                 <p class="item" draggable="true">Learn React</p>
                 <p class="item" draggable="true">Learn JavaScript</p>
-            </div>
         </div>
-        <div class="board">
+        <div id="progress-board" class="board">
             <h4>In Progress</h4>
         </div>
-        <div class="board">
+        <div id="done-board" class="board">
             <h4>Completed</h4>
         </div>
     </div>
     
+    <!-- <input type="text" placeholder="Enter your task..."> -->
+    <button id="add-task-btn">Add Task</button>
+
     <script src="script.js" defer></script>
 </body>
 </html>
