@@ -1,5 +1,6 @@
 const addTaskBtn = document.getElementById('add-task-btn')
 const todoBoard = document.getElementById('todo-board')
+const taskInput = document.getElementById('taskInput');
 
 function attachDragEvents(target) {
     target.addEventListener('dragstart', () => {
@@ -31,9 +32,11 @@ function deleteTaskEvent(target) {
 }
 
 addTaskBtn.addEventListener('click', () => {
-    const input = prompt("Enter your task");
+    const input = taskInput.value;
 
     if (!input) return
+
+    taskInput.value = '';
     
     const taskCard = document.createElement('p')
     taskCard.classList.add('item')
