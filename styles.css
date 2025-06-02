@@ -6,8 +6,15 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 .container {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
     padding: 20px;
 }
@@ -32,9 +39,33 @@
     margin-top: 10px;
     border-radius: 8px;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
 }
 
 .item:hover {
     background-color: #1e1e1e;
     color: white;
+}
+
+#add-task-btn {
+    background-color: #1e1e1e;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    width: 10vw;
+    align-self: center;
+}
+
+.dragging {
+    opacity: 0.5;
+}
+
+.item button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
 }

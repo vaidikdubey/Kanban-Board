@@ -10,6 +10,26 @@ function attachDragEvents(target) {
     })
 }
 
+function editTaskEvent(target) {
+    target.addEventListener('dblclick', () => {
+        const prevInput = target.textContent;
+        const input = prompt(`Update task "${target.textContent}"`);
+
+        if (input === "" || input === null) {
+            target.textContent = prevInput;
+        }
+        else {
+            target.textContent = input;
+        }
+    })
+}
+
+function deleteTaskEvent(target) {
+    target.addEventListener('click', () => {
+        target.parentElement.remove();
+    })   
+}
+
 addTaskBtn.addEventListener('click', () => {
     const input = prompt("Enter your task");
 
@@ -20,6 +40,13 @@ addTaskBtn.addEventListener('click', () => {
     taskCard.setAttribute('draggable', true);
     taskCard.textContent = input
     attachDragEvents(taskCard)
+    editTaskEvent(taskCard)
+
+    const deleteBtn = document.createElement('button')
+    deleteBtn.textContent = '❌'
+    deleteBtn.classList.add('delete-btn')
+    taskCard.appendChild(deleteBtn)
+    deleteTaskEvent(deleteBtn)
 
     todoBoard.appendChild(taskCard);
 })
@@ -27,7 +54,14 @@ addTaskBtn.addEventListener('click', () => {
 const allBoards = document.querySelectorAll('.board');
 const allItems = document.querySelectorAll('.item');
 
-allItems.forEach(attachDragEvents) //If signature matches we can directly pass the function name instead of using arrow functions and callback
+allItems.forEach((item) => {
+    attachDragEvents(item)
+    editTaskEvent(item)
+})
+
+const deleteButton = document.querySelectorAll('.delete-btn')
+
+deleteButton.forEach(deleteTaskEvent)
 
 allBoards.forEach(board => {
     board.addEventListener('dragover', () => {
